@@ -1,2 +1,2 @@
 # alexchung16.github.io
-github,io
+github.io
