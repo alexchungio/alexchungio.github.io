@@ -7,3 +7,9 @@
 * [基于opencv实现视频流的编解码和存储](https://github.com/alexchung16/alexchung16.github.io/blob/master/Video/%E5%9F%BA%E4%BA%8Eopencv%E5%AE%9E%E7%8E%B0%E8%A7%86%E9%A2%91%E6%B5%81%E7%9A%84%E7%BC%96%E8%A7%A3%E7%A0%81%E5%92%8C%E5%AD%98%E5%82%A8.md)
 ## 依赖工具
 * [MathJax Plugin for Github](https://github.com/orsharir/github-mathjax)
+  * for linux steps below:
+    * 1nd, git clone the current repository to local path(git clone https://github.com/orsharir/github-mathjax.git);
+    * 2nd, open the chrome/chromium extensions page(chrome://extensions), open development mode, and click 'Load unpacked' button to choose the path which configuration file 'manifest.json' is located(path 'github-mathjax' as usual), and the extension is loaded.
+    * 3rd, open the github pages which contains MathJax Latex, and testing the result above.
+  * for windows
+    add chrome extension (https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en-US)
