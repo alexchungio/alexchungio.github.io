@@ -12,4 +12,4 @@
     * 2nd, open the chrome/chromium extensions page(chrome://extensions), open development mode, and click 'Load unpacked' button to choose the path which configuration file 'manifest.json' is located(path 'github-mathjax' as usual), and the extension is loaded.
     * 3rd, open the github pages which contains MathJax Latex, and testing the result above.
   * for windows
-    add chrome extension (https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en-US)
+    * add chrome extension (https://chrome.google.com/webstore/detail/mathjax-plugin-for-github/ioemnmodlmafdkllaclgeombjnmnbima?hl=en-US)
