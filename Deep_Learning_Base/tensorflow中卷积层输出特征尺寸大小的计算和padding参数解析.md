@@ -241,7 +241,7 @@ pad(tensor, paddings, mode="CONSTANT", name=None, constant_values=0)
 
     padding的计算公式如下：
 
-    ​	    这里首先计算当前维度总的padding大小$SUM\_ P$，再分别得到不同方向上的补丁的大小$L\_ P$和$R\_  P$，这里$SUM\_P$的计算参考工公式$(4)$, 用$SUM\_P$代替$2 P$进行推导，即可得到公式$(8.1)$。
+    ​	    这里首先计算当前维度总的padding大小$SUM\_ P$，再分别得到不同方向上的补丁的大小$L\_P$和$R\_P$，这里$SUM\_P$的计算参考工公式$(4)$, 用$SUM\_P$代替$2 P$进行推导，即可得到公式$(8.1)$。
     $$
     \begin{eqnarray*}
     & SUM\_P&= (O-1)\times S + F - I \tag{8.1} \\
