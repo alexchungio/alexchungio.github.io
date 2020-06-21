@@ -231,7 +231,7 @@ pad(tensor, paddings, mode="CONSTANT", name=None, constant_values=0)
     $$
     当 `paddings='SAME'`:
     $$
-    O = \lceil\frac{I-F}{S}\rceil \tag{7}
+    O = \lceil\frac{I}{S}\rceil \tag{7}
     $$
     式中 $I$代表输入(Input)维度的尺寸大小
 
