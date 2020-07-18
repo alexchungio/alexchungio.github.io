@@ -106,7 +106,7 @@ RoIPooling，直接从feature map 里截取各个兴趣区域(Region of Interest
 
 * 概念
 
-双线性插值，又称为双线性内插。在数学上，双线性插值是有两个变量的插值函数的[线性插值](https://baike.baidu.com/item/线性插值/19113392)扩展，其核心思想是在两个方向分别进行一次线性插值。在数字图像和音频处理领域都有应用。
+双线性插值(bilinear interpolation)，又称为双线性内插。在数学上，双线性插值是有两个变量的插值函数的[线性插值](https://baike.baidu.com/item/线性插值/19113392)扩展，其核心思想是在两个方向分别进行一次线性插值。在数字图像和音频处理领域都有应用。
 
 在图像处理中，双线性插值法**考虑围绕未知像素的计算位置的$2\times2$最近邻域的已知像素**。然后对这4个像素进行加权平均，以得出其最终的内插值。
 
@@ -170,4 +170,5 @@ $$
 * <http://cs231n.stanford.edu/slides/2020/lecture_12.pdf>
 * <https://towardsdatascience.com/understanding-region-of-interest-part-2-roi-align-and-roi-warp-f795196fc193>
 * <https://tjmachinelearning.com/lectures/1718/instance/instance.pdf>
+* <https://en.wikipedia.org/wiki/Bilinear_interpolation>
 
