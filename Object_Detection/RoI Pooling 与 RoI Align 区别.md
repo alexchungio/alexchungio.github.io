@@ -131,9 +131,14 @@ $$
 $$
 \begin{align}
 \phi(x,y_1) =& \frac{x-x_1}{x_2-x_1}\phi(x_2, y_1) +\frac{x-x_2}{x_1-x_2}\phi(x_1, y_1) \tag{2}\\
+\end{align}
+$$
+$$
+\begin{align}
 \phi(x,y_2)=& \frac{x-x_1}{x_2-x_1}\phi(x_2, y_2) +\frac{x-x_2}{x_1-x_2}\phi(x_1, y_2) \tag{3}\\  
 \end{align}
 $$
+
 第二步， 利用公式$2$和公式$3$的到的结果，再次执行一次线性插值，得到目标位置$P$的像素值。
 $$
 \begin{align}
