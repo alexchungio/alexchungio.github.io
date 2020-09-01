@@ -4,7 +4,8 @@
 * [基于tensorflow的正则化实现](https://github.com/alexchung16/alexchung16.github.io/blob/master/Deep_Learning_Base/%E5%9F%BA%E4%BA%8Etensorflow%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96%E5%AE%9E%E7%8E%B0.md)
 * [tensorflow中卷积层输出特征尺寸计算和padding参数解析](https://github.com/alexchung16/alexchung16.github.io/blob/master/Deep_Learning_Base/tensorflow%E4%B8%AD%E5%8D%B7%E7%A7%AF%E5%B1%82%E8%BE%93%E5%87%BA%E7%89%B9%E5%BE%81%E5%B0%BA%E5%AF%B8%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%AE%A1%E7%AE%97%E5%92%8Cpadding%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90.md)
 * [移动平均](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87.md)
-* [深度学习中常用优化器](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BC%98%E5%8C%96%E5%99%A8.md)
+* [深度学习中的固定衰减策略总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%9B%BA%E5%AE%9A%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F%E7%AD%96%E7%95%A5%E6%80%BB%E7%BB%93.md)
+* [深度学习中常用优化器的总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BC%98%E5%8C%96%E5%99%A8%E7%9A%84%E6%80%BB%E7%BB%93.md)
 ## 目标检测
 * [RoI Pooling 与 RoI Align 区别](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/RoI%20Pooling%20%E4%B8%8E%20RoI%20Align%20%E5%8C%BA%E5%88%AB.md)
 ## 视频处理
