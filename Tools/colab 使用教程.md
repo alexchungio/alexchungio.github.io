@@ -1,6 +1,6 @@
 # colab 使用教程
 
-## 挂载 google  driver
+## 挂载 google  driver 
 
 ###  挂载操作
 
@@ -124,4 +124,19 @@ print('switch remote branch')
 ![image-20200924161021837](../graph/image-20200924161021837.png)
 
 ### 提交代码到远程仓库
+
+##  Clab  存储空间
+
+* CPU/TPU 模式下分配存储空间： RAM 12G, Disk 108G
+* GPU 模式下下分配存储空间： RAM 12G, Disk 68G 
+
+存储空间不足时， 对于前期的数据处理部分使用CPU, 后期模型训练使用GPU。
+
+## 模型保存
+
+训练模型保存到google driver 挂载目录，
+
+## 参考资料
+
+
 
