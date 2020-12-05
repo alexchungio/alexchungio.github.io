@@ -90,7 +90,19 @@
 
 ## Dropout
 
-对于RNN 进行dropout 操作时，对于RNN部分不进行dropout, 对于同一层的t-1时间步到t时间步的状态传递计算时不进行dropout; 仅在同一时刻时的多层状态信息传递的时候进行dropout。其实也可以理解， 如果在层执行dropout，意味着整个层后续的时间点的信息也被全部丢弃了， 对网络训练影响太剧烈了， 而在不同同一时间步的不同层之间执行dropout是更合适的选择。
+* 非循环连接的丢弃法
+
+* 当在循环神经网络上应用丢弃法时， 不能直接对每个时刻的隐状态进行随机丢弃， 这样会损害循环网络在时间维度上的记忆能力． 一种简单的方法是对非时间维度的连接（ 即非循环连接） 进行随机丢失。 
+
+* 即对于同一层的t-1时间步到t时间步的状态传递计算时不进行dropout; 仅在同一时刻时的多层状态信息传递的时候进行dropout。其实也可以理解， 如果在层执行dropout，意味着整个层后续的时间点的信息也被全部丢弃了， 对网络训练影响太剧烈了， 而在同一时间步的不同层之间执行dropout是更合适的选择。（虚线边表示进行随机丢弃， 不同的颜色表示不同的丢弃掩码  ）
+
+  ![针对非循环连接的丢弃法](../graph/image-20200904093623182.png)
+
+  
+
+* 根据贝叶斯学习的解释， 丢弃法是一种对参数𝜃 的采样． 每次采样的参数需要在每个时刻保持不变． 因此， 在对循环神经网络上使用丢弃法时， 需要对参数矩阵的每个元素进行随机丢弃， 并在所有时刻都使用相同的丢弃掩码． 这种方法称为变分丢弃法（ Variational Dropout）。（相同颜色表示使用相同的丢弃掩码  ）   
+
+  ![变分丢弃法](../graph/image-20200904093917733.png)
 
 ```python
 tf.nn.rnn_cell.DropoutWrapper
@@ -107,4 +119,5 @@ tf.nn.rnn_cell.DropoutWrapper
 * <https://medium.com/machine-learning-algorithms/mnist-using-recurrent-neural-network-2d070a5915a2>
 * <https://arxiv.org/pdf/1412.3555.pdf>
 * <https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks#architecture>
+* <https://stackoverflow.com/questions/49242266/difference-between-bidirectional-dynamic-rnn-and-stack-bidirectional-dynamic-rnn>
 

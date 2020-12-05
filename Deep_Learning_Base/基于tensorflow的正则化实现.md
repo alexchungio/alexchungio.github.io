@@ -1,4 +1,4 @@
-#  基于tensorflow的正则化实现
+#  基于tensorflow中L2的正则化实现
 
 ##  前置条件
 
