@@ -194,4 +194,5 @@ RPN给可能包含目标的rois, RoIHead模块会对rois进行进一步的如分
 * <https://www.telesens.co/2018/03/11/object-detection-and-classification-using-r-cnns/>
 * <https://zhuanlan.zhihu.com/p/138824387>
 * <https://zhuanlan.zhihu.com/p/32404424>
+* <https://zhuanlan.zhihu.com/p/42553957>
 
