@@ -153,7 +153,7 @@ RPN给可能包含目标的rois, RoIHead模块会对rois进行进一步的如分
 
 ![preview](../graph/v2-7c388ef5376e1057785e2f93b79df0f6_r.jpg)
 
-### 关于Creator
+### 关于 Creator
 
 - `AnchorTargetCreator` ： 负责在训练RPN的时候，从上万个anchor中选择一些(比如256)进行训练，以使得正负样本比例大概是1:1. 同时给出训练的位置参数目标。 即返回`rpn_target_box`*和`rpn_target_label`。
 - `ProposalTargetCreator`： 负责在训练RoIHead/Fast R-CNN的时候，从RoIs选择一部分(比如128个)用以训练。同时给定训练目标, 返回（`sample_rois`, `rois_box`, `rois_score`）
@@ -161,17 +161,32 @@ RPN给可能包含目标的rois, RoIHead模块会对rois进行进一步的如分
 
 其中`AnchorTargetCreator`和`ProposalTargetCreator`是为了生成训练的目标，只在训练阶段用到，`ProposalCreator`是RPN为Fast R-CNN生成RoIs，在训练和测试阶段都会用到。三个共同点在于他们都不需要考虑反向传播（因此不同框架间可以共享numpy实现）
 
-### 关于NMS
+### 关于 NMS
 
-​    Faster-RCNN 的整个推理过程中会执行两次NMS, 在RPN 阶段的 的`ProposalCreator` 组件，对rois 做第一次NMS； 第二次在Fast-RCNN 的推理阶段对输出的目标bbox 做第二次NMS。
+​    **Faster-RCNN 的整个推理过程中会执行两次NMS**,
+
+* 在RPN 阶段的 的`ProposalCreator` 组件，对rois 做第一次NMS
+
+* 二次在Fast-RCNN 的推理阶段对输出的目标bbox 做第二次NMS。
+
+### 关于 IoU
+
+   **Faster 中两次会用到两次 IoU**
+
+* 第一次是训练时 RoI-Head 阶段时`ProposalTargetCreator`组件，**计算每个propsal产生的rois(训练阶段为2000个， 推理阶段为300个) 与`gt_box`的 IoU**, 将Proposal 划分为正样本（目标） 和 负样本（背景），并从正负样本中采样， 使得它们的比例满足1：3 且总数一般为128， 然后把采样后的（128个）rois，送入 RoIPooling 进行下一步操作。 在推理时，此时RPN 网络送入Fast RCNN 阶段的 roi 数量时300，由于没有 `gt_box` 因此不会经过`ProposalTargetCreator`组件进行 IoU 计算。
+* 第二次是计算使用 IoU 是在计算 mAP 时
 
 ### 关于分类
 
-在RPN阶段分类是二分类，而Fast RCNN阶段是多分类（真实目标类别+1）
+* 在RPN阶段分类是二分类
+* 而Fast RCNN阶段是多分类（真实目标类别+1）
 
 ### 关于回归
 
-在RPN的时候，在RPN阶段已经对anchor的位置做了第一次边框，在Fast-RCNN阶段对 bbox 做第二次边框回归， 第二次边框回归可以看作是对第一次的微调。
+**在RPN的时候，发生了两次回归操作**
+
+* 在RPN阶段已经对anchor的位置做了第一次边框
+* 在Fast-RCNN阶段对 bbox 做第二次边框回归， 第二次边框回归可以看作是对第一次的微调。
 
 ##  参考资料
 
