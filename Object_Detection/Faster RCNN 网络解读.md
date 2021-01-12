@@ -173,7 +173,7 @@ RPN给可能包含目标的rois, RoIHead模块会对rois进行进一步的如分
 
    **Faster 中两次会用到两次 IoU**
 
-* 第一次是训练时 RoI-Head 阶段时`ProposalTargetCreator`组件，**计算每个propsal产生的rois(训练阶段为2000个， 推理阶段为300个) 与`gt_box`的 IoU**, 将Proposal 划分为正样本（目标） 和 负样本（背景），并从正负样本中采样， 使得它们的比例满足1：3 且总数一般为128， 然后把采样后的（128个）rois，送入 RoIPooling 进行下一步操作。 在推理时，此时RPN 网络送入Fast RCNN 阶段的 roi 数量时300，由于没有 `gt_box` 因此不会经过`ProposalTargetCreator`组件进行 IoU 计算。
+* 第一次是训练时 RoI-Head 阶段时`ProposalTargetCreator`组件，**计算每个propsal产生的rois(训练阶段为2000个， 推理阶段为300个) 与`gt_box`的 IoU**, 将Proposal 划分为正样本（目标） 和 负样本（背景），并从正负样本中采样， 使得它们的比例满足1：3 且总数一般为128， 然后把采样后的（128个）rois，送入 RoIPooling 进行下一步操作。 在推理时，此时RPN 网络送入Fast RCNN 阶段的 roi 数量时300，由于没有 `gt_box` 因此不会经过`ProposalTargetCreator`组件进行 IoU 计算, 直接将（300个）rois 送到 `RoIPooling`中， 之后进行类别分类和边框回归。
 * 第二次是计算使用 IoU 是在计算 mAP 时
 
 ### 关于分类
