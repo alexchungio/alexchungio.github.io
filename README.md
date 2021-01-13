@@ -1,6 +1,13 @@
-# 计算机视觉笔记
-## 深度学习基础
-* [机器学习准则](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%87%86%E5%88%99%EF%BC%88%E6%9C%9F%E6%9C%9B%E9%A3%8E%E9%99%A9%E3%80%81%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9%E3%80%81%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9%EF%BC%89.md)
+
+
+## 机器学习
+
+* [分类和回归任务中评价尺度](https://github.com/alexchungio/alexchungio.github.io/blob/master/ML/%E5%88%86%E7%B1%BB%E5%92%8C%E5%9B%9E%E5%BD%92%E4%BB%BB%E5%8A%A1%E4%B8%AD%E8%AF%84%E4%BB%B7%E5%B0%BA%E5%BA%A6%EF%BC%88Metric%EF%BC%89.md)
+* [机器学习准则](https://github.com/alexchungio/alexchungio.github.io/blob/master/ML/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%87%86%E5%88%99%EF%BC%88%E6%9C%9F%E6%9C%9B%E9%A3%8E%E9%99%A9%E3%80%81%E7%BB%8F%E9%AA%8C%E9%A3%8E%E9%99%A9%E3%80%81%E7%BB%93%E6%9E%84%E9%A3%8E%E9%99%A9%EF%BC%89.md)
+* [单标签和多标签分类模型的性能度量指标总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/ML/%E5%8D%95%E6%A0%87%E7%AD%BE%E5%92%8C%E5%A4%9A%E6%A0%87%E7%AD%BE%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E7%9A%84%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F%E6%8C%87%E6%A0%87%E6%80%BB%E7%BB%93.md)
+
+## 深度学习
+
 * [基于tensorflow的正则化实现](https://github.com/alexchung16/alexchung16.github.io/blob/master/Deep_Learning_Base/%E5%9F%BA%E4%BA%8Etensorflow%E7%9A%84%E6%AD%A3%E5%88%99%E5%8C%96%E5%AE%9E%E7%8E%B0.md)
 * [tensorflow中卷积层输出特征尺寸计算和padding参数解析](https://github.com/alexchung16/alexchung16.github.io/blob/master/Deep_Learning_Base/tensorflow%E4%B8%AD%E5%8D%B7%E7%A7%AF%E5%B1%82%E8%BE%93%E5%87%BA%E7%89%B9%E5%BE%81%E5%B0%BA%E5%AF%B8%E5%A4%A7%E5%B0%8F%E7%9A%84%E8%AE%A1%E7%AE%97%E5%92%8Cpadding%E5%8F%82%E6%95%B0%E8%A7%A3%E6%9E%90.md)
 * [移动平均](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87.md)
