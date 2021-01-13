@@ -21,10 +21,12 @@ $$
 
 ###  
 
-MAE(Mean Absolute Error)
+### MAE(Mean Absolute Error)
+
 $$
 MAE = \frac{1}{m}\sum_{i=1}^m\left|y_i - \hat{y}_i\right|
 $$
+
 
 
 ### MSE(Mean Squared Error)
