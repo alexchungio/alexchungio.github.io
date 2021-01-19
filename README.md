@@ -25,6 +25,7 @@
 * [基于opencv实现视频流的编解码和存储](https://github.com/alexchung16/alexchung16.github.io/blob/master/Video/%E5%9F%BA%E4%BA%8Eopencv%E5%AE%9E%E7%8E%B0%E8%A7%86%E9%A2%91%E6%B5%81%E7%9A%84%E7%BC%96%E8%A7%A3%E7%A0%81%E5%92%8C%E5%AD%98%E5%82%A8.md)
 ## NLP
 * [RNN LSTM GRU 总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/NLP/RNN%20LSTM%20GRU%20%E6%80%BB%E7%BB%93%20.md)
+* [注意力机制](https://github.com/alexchungio/alexchungio.github.io/blob/master/NLP/%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6(Attention%20Mechnism).md)
 ## linux
 * [查找操作](https://github.com/alexchungio/alexchungio.github.io/blob/master/Linux/%E6%9F%A5%E6%89%BE%E6%93%8D%E4%BD%9C.md)
 * [多命令协作：管道(pipeline)和重定向(redirect)](https://github.com/alexchungio/alexchungio.github.io/blob/master/Linux/%E7%AE%A1%E9%81%93%E5%92%8C%E9%87%8D%E5%AE%9A%E5%90%91.md)
