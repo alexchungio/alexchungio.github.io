@@ -20,7 +20,7 @@
 ## 目标检测
 * [RoI Pooling 与 RoI Align 区别](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/RoI%20Pooling%20%E4%B8%8E%20RoI%20Align%20%E5%8C%BA%E5%88%AB.md)
 * [Faster-RCNN 网络解读](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/Faster%20RCNN%20%E7%BD%91%E7%BB%9C%E8%A7%A3%E8%AF%BB.md)
-* [目标检测中的边框回归(I0U)损失函数总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E8%BE%B9%E6%A1%86%E5%9B%9E%E5%BD%92(IoU)%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93.md)
+* [目标检测中的边框回归(IoU)损失函数总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%AD%E8%BE%B9%E6%A1%86%E5%9B%9E%E5%BD%92(IoU)%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E6%80%BB%E7%BB%93.md)
 ## 视频处理
 * [视频的编解码格式](https://github.com/alexchung16/alexchung16.github.io/blob/master/Video/%E8%A7%86%E9%A2%91%E7%9A%84%E7%BC%96%E8%A7%A3%E7%A0%81%E6%A0%BC%E5%BC%8F.md)
 * [基于opencv实现视频流的编解码和存储](https://github.com/alexchung16/alexchung16.github.io/blob/master/Video/%E5%9F%BA%E4%BA%8Eopencv%E5%AE%9E%E7%8E%B0%E8%A7%86%E9%A2%91%E6%B5%81%E7%9A%84%E7%BC%96%E8%A7%A3%E7%A0%81%E5%92%8C%E5%AD%98%E5%82%A8.md)
