@@ -15,7 +15,12 @@
 * [移动平均](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E7%A7%BB%E5%8A%A8%E5%B9%B3%E5%9D%87.md)
 * [深度学习中的固定衰减策略总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E7%9A%84%E5%9B%BA%E5%AE%9A%E5%AD%A6%E4%B9%A0%E7%8E%87%E8%A1%B0%E5%87%8F%E7%AD%96%E7%95%A5%E6%80%BB%E7%BB%93.md)
 * [深度学习中常用优化器的总结](https://github.com/alexchungio/alexchungio.github.io/blob/master/Deep_Learning_Base/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%AD%E5%B8%B8%E7%94%A8%E4%BC%98%E5%8C%96%E5%99%A8%E7%9A%84%E6%80%BB%E7%BB%93.md)
+## 图像处理
+
+* [图像特征点检测](https://github.com/alexchungio/alexchungio.github.io/blob/master/Image_process/%E5%9B%BE%E5%83%8F%E7%89%B9%E5%BE%81%E6%A3%80%E6%B5%8B%E5%92%8C%E6%8F%8F%E8%BF%B0.md)
+
 ## 图像分类
+
 * [图像分类任务中的损失函数](https://github.com/alexchungio/alexchungio.github.io/blob/master/Image_Classify/%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB%E4%B8%AD%E7%9A%84%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0.md) 
 ## 目标检测
 * [RoI Pooling 与 RoI Align 区别](https://github.com/alexchungio/alexchungio.github.io/blob/master/Object_Detection/RoI%20Pooling%20%E4%B8%8E%20RoI%20Align%20%E5%8C%BA%E5%88%AB.md)
