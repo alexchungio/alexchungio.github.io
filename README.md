@@ -1,3 +1,5 @@
+
+[![LICENSE](https://img.shields.io/badge/license-NPL%20(The%20996%20Prohibited%20License)-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 ## 数学基础
 
 * [矩阵和行列式的本质](https://github.com/alexchungio/alexchungio.github.io/blob/master/Image_process/%E7%9F%A9%E9%98%B5%E5%92%8C%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%9C%AC%E8%B4%A8.md)
