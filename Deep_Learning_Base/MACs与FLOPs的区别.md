@@ -11,7 +11,7 @@
 
 * MACs: Multiply-ACcumulate operation
 
-$$FLOPs \approx  2 \times MACs$$
+  $MACs \approx  2 \times FLOPs$
 
 ## 参考资料
 
@@ -20,4 +20,6 @@ $$FLOPs \approx  2 \times MACs$$
 * https://github.com/Lyken17/pytorch-OpCounter
 
 * [pruning convolutional neural networks for resource efficient inferenc](https://arxiv.org/pdf/1611.06440.pdf)
+
+* https://zhuanlan.zhihu.com/p/266275736
 
