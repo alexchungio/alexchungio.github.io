@@ -41,7 +41,43 @@ PACT2 激活模块用于将激活限制为2的幂次方值，PACT2 用于替代�
 * **关于训练**：在QAT训练期间的几个 epoch 之后，**冻结BN 和 量化范围对获得更高的量化准确性有益**，实用的函数 `xnn.utils.freeze_bn(model) `和` xnn.layers.freeze_quant_range(model) `可以被用在这里。 
 * 其他：如果一个函数不改变特征图的范围，那么是否以`Modules`形式使用它并不重要。比如`torch.nn.functional.interpolate`
 
+## edgeai-torchvision 量化库使用
+
+### PTQ
+
+PTQ(Post-Train-Quantization) 对应的模块为`QuantCalibrateModule`(edgeailite/xnn/quantize/quant_calib_module.py)
+
+### QAT
+
+QAT(Quantization Aware Training) 对应的模块为`QuantTrainModule`(edgeailite/xnn/quantize/quant_calib_module.py)
+
+QAT 的默认的量化方式为**对称（symmetric）**、**二次幂（power-of-two）量化**。
+
+**QAT 量化训练的流程**如下：
+
+1. 第一步，插入伪量化节点 `model_surgery_quantize`(edgeailite/xnn/quantize/quant_train_module.py): 将计算图中所有的模块替换为伪量化模块。*这里会对激活函数做特殊处理，如果激活函数为ReLU 或者 ReLU6，调整符号标签`sign=False`，即使用**无符号量化**。*
+2. 第二步，设置模块属性控制模块的行为`apply_setattr`(edgeailite/xnn/quantize/quant_base_module.py)：配置模块属性，使设置生效
+3. 第三步，执行量化训练。 量化训练过程中，会通过`merge_quantize_weights`(edgeailite/xnn/quantize/quant_train_module.py)会执行 conv 与 bn 层的合并，以优化量化精度。
+4. 第四步，保存量化训练
+
+**获取权重、激活函数和偏差的尺度因子**的代码分别为 `get_clips_scale_w`，`get_clips_scale_w` 和 `get_clips_scale_bias` (edgeailite/xnn/quantize/quant_base_module.py)
+
+1. 第一步，统计浮点数的的进行对称处理和二次幂向上取整（$\hat{x} = pow(2, ceil(log(x)))$）裁剪之后的最小值 clip_min和最大值clip_max。
+2. 第二步，计算对应量化 tensor （weight，bias，activation）对应量化位数取值范围的最小值width_min和最大值width_max。
+3. 第三步，计算尺度系数scale，$scale= \frac{width_{max} } {clip_{max}}$
+
+**伪量化节点**的代码为`quantize_dequantize_func`(edgeailite/xnn/layers/functional.py)
+
+1. 第一步，对尺度系数s进行二次幂向下取整，$\tilde{s} = pow(2, floor(log(s)))$
+2. 第二步，使用**量化**公式，浮点数的值乘以尺度系数得到**伪量化后的值**（训练时还是浮点数） $x_{scale} = x \cdot \tilde{s}$
+3. 第三步，计算尺度系数的倒数 $\tilde{s}_{inv}=\frac{1}{\tilde{s}}$
+4. 第四步，对量化后的值执行范围裁剪（clamp）， $x_{clamp}=clamp(x_{scale};width_{min}, width_{max})$
+5. 第五步，对量化后的值进行**反量化**，得到**浮点数值**，$\hat{x}=x_{clamp}\cdot \tilde{s}_{inv}$
+6. 第六步，返回**引入量化误差**后的浮点数值
+
 ## 参考资料
 
 * <https://github.com/TexasInstruments/edgeai-torchvision/blob/master/docs/pixel2pixel/Quantization.md>
 * https://software-dl.ti.com/jacinto7/esd/processor-sdk-rtos-jacinto7/08_04_00_06/exports/docs/tidl_j721e_08_04_00_16/ti_dl/docs/user_guide_html/md_tidl_fsg_quantization.html>
+
+* <https://github.com/TexasInstruments/edgeai-torchvision>
