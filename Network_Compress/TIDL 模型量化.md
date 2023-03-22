@@ -75,6 +75,32 @@ QAT 的默认的量化方式为**对称（symmetric）**、**二次幂（power-o
 5. 第五步，对量化后的值进行**反量化**，得到**浮点数值**，$\hat{x}=x_{clamp}\cdot \tilde{s}_{inv}$
 6. 第六步，返回**引入量化误差**后的浮点数值
 
+**关于量化模型权重的保存和加载**
+
+模型量化相关的参数主要保存在`QuantiTrainPAct2`(edgeailite/xnn/quantize/quant_train_module.py)中，而它又继承自`PAct2`（edgeailite/xnn/layers/activation.py）模块中。
+
+sssPAct2 中用于保存量化信息的参数有两个：
+
+* clip_act:
+
+  ```python
+  self.register_buffer('clips_act', torch.tensor(default_clips, dtype=torch.float32))
+  ```
+
+  **训练时**，计算图汇总的 `clips_act`时浮点型的连续值值，其中`clips_act[0]` 和`clip_act[1]`分别表示对应tensor 的最小值和最小值；**推理时**，计算图中的clips_act 表示，首先对clip_act 真实值**取绝对值的最大值（clip_max=max(abs(clip_act[0]), abs(clip_act[1])))**，然后再对clip_max 进行**二次幂向上取整（clip_max=pow(2, ceil(log(clip_max)))进行裁剪**之后的**二次幂整数值**，最后的clip_act 的取值范围为**(-clip_max, clip_max) **。推理时的clip_act 值，同时对应于onnx 计算图中clip 算子的参数值。demo 代码如下
+
+  ```python
+  clip_max = torch.max(torch.max(clips_act))
+  clip_max = torch.pow(2, torch.ceil(torch.log2(clip_max)))
+  clip_act = (-clip_max, clip_max)
+  ```
+
+* num_batch_tracked: 
+
+  ```python
+  self.register_buffer('num_batches_tracked', torch.tensor(-1.0, dtype=torch.float32))
+  ```
+
 ## 参考资料
 
 * <https://github.com/TexasInstruments/edgeai-torchvision/blob/master/docs/pixel2pixel/Quantization.md>
