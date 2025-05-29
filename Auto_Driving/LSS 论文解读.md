@@ -14,7 +14,7 @@ LSS(Lift-Splat-Shoot) 范式的本质是三步：第一步，通过2D特征和�
 
 ## 关键点
 
-### Lift(提升)
+### Lift(提升，估计潜在深度分布)
 
 Lift的作用是将单目（monocular）图像的2D特征提升到3D空间，生成视锥点云（Frustum Point Cloud）
 
@@ -34,9 +34,9 @@ Lift的作用是将单目（monocular）图像的2D特征提升到3D空间，生
 
 ​		略
 
-### Splat(撒点)
+### Splat(拍平/溅射/Pillar Pooling)
 
-Splat，将多个相机通过Lift中“提升”得到的3D点云投影到统一的BEV空间，生成BEV特征。
+Splat，将多个相机通过Lift中“提升”得到的3D点云投影到统一的BEV空间，生成BEV特征（俯视图特征）。
 
 #### 执行步骤
 
@@ -68,5 +68,6 @@ Shoot，在BEV特征图上执行下游任务，如OCC、3D-OD或轨迹预测等�
 * https://zhuanlan.zhihu.com/p/668846159
 * https://zhuanlan.zhihu.com/p/6144337348
 
-
+* https://jordicenzano.name/front-test/2d-3d-paradigm-overview-2011/camera-model/
+* https://zhuanlan.zhihu.com/p/654311603?utm_id=0
 
